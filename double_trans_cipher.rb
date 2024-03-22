@@ -25,7 +25,7 @@ module DoubleTranspositionCipher
     sorted_matrix = sorted_rows.map { |row| row.shuffle(random: Random.new(key.to_i)) }
 
     # Step 5: Return joined ciphertext
-    puts "s: #{sorted_matrix.flatten.join('')}"
+    # puts "s: #{sorted_matrix.flatten.join('')}"
     sorted_matrix.flatten.join('')
   end
 
@@ -45,15 +45,13 @@ module DoubleTranspositionCipher
 
     # Step 5: Return joined plaintext
     sorted_matrix.flatten.join('')
-
-end
-
+  end
 
   def self.matrix_dimensions(length)
-    # 找到最接近的平方數
+    # Find the nearest square root
     square_root = Math.sqrt(length).round
 
-    # 確保矩陣是接近正方形的，向下取最接近的因數
+    # Ensure the matrix is nearly square by taking the closest factor downward
     cols = square_root.downto(1).find { |n| (length % n).zero? }
     rows = length / cols
 
