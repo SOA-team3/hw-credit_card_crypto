@@ -48,7 +48,7 @@ describe 'Test card info encryption' do
       # key = ModernSymmetricCipher.generate_new_key
       enc = ModernSymmetricCipher.encrypt(@cc, key)
       dec = ModernSymmetricCipher.decrypt(enc, key)
-      puts "here: #{dec}"
+      # puts "here: #{dec}"
       _(dec).must_equal @cc.to_s
     end
   end
